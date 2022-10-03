@@ -2,7 +2,7 @@
     {
         "id": 1,
         "title": "Palindrome",
-        "image": "http://localhost:3000/profile/profile_1664791367671.jpg"
+        "image": "http://localhost:80/profile/profile_1664791367671.jpg"
     },
     {
         "id": 2,
@@ -22,6 +22,6 @@
     {
         "id": 5,
         "title": "Reverse String",
-        "image": "http://localhost:3000/profile/profile_1664796318549.png"
+        "image": "http://localhost:80/profile/profile_1664796318549.png"
     }
 ]
