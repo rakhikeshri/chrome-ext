@@ -31,7 +31,7 @@ app.post("/upload", upload.single('profile'), (req, res) => {
 
 
 app.get('/', (req, res) => {
-    res.send("Hellow World")
+    res.send(`Hellow World ${port}`)
 })
 
 app.get("/snippets", (req, res) => {
