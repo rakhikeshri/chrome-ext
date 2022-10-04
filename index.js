@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require("mongoose")
+const cors = require("cors")
 require('dotenv').config()
 mongoose.connect( process.env.URL, {useNewUrlParser: true} ).then(() => { console.log('connected to mongodb atlas') })
 
@@ -8,6 +9,9 @@ const Snippet = require('./snippets')
 const PORT = process.env.PORT || 3000;
 
 const app = express()
+
+app.use(cors())
+
 app.use(express.json())
 
 //connect to mongodb atlas
