@@ -3,7 +3,6 @@ const mongoose = require("mongoose")
 const cors = require("cors")
 require('dotenv').config()
 
-
 //connect to mongodb atlas
 mongoose.connect( process.env.URL, {useNewUrlParser: true} ).then(() => { console.log('connected to mongodb atlas') })
 
@@ -16,7 +15,6 @@ const app = express()
 app.use(cors())
 
 app.use(express.json())
-
 
 app.post("/create", async (req,res) => {
     let data = new Snippet(req.body);
