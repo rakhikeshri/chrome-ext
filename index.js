@@ -2,6 +2,9 @@ const express = require('express')
 const mongoose = require("mongoose")
 const cors = require("cors")
 require('dotenv').config()
+
+
+//connect to mongodb atlas
 mongoose.connect( process.env.URL, {useNewUrlParser: true} ).then(() => { console.log('connected to mongodb atlas') })
 
 const Snippet = require('./snippets') 
@@ -14,12 +17,11 @@ app.use(cors())
 
 app.use(express.json())
 
-//connect to mongodb atlas
 
 app.post("/create", async (req,res) => {
     let data = new Snippet(req.body);
     let result = data.save();
-    console.log(result);
+    // console.log(result);
     res.send(result);
 })
 
@@ -30,7 +32,7 @@ app.get("/snippets", async (req, res) => {
 
 //searching 
 app.get("/snippet/:key", async (req, res) => {
-    console.log(req.params.key)
+    // console.log(req.params.key)
     let data = await Snippet.find(
         {
             "$or": [
@@ -44,3 +46,4 @@ app.get("/snippet/:key", async (req, res) => {
 app.listen(PORT, () =>{
     console.log("server on ", PORT)
 })
+
